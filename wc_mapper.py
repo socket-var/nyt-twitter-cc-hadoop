@@ -3,12 +3,12 @@
 
 import sys
 from fingerprint import FingerPrint
- 
+
 f = FingerPrint()
 # input comes from STDIN (standard input)
 for line in sys.stdin:
     # remove leading and trailing whitespace
-    line = line.strip()
+    line = line.strip().decode('unicode_escape').encode('ascii', 'ignore')
     line = f.fingerprint(line)
     # split the line into words
     words = line.split()
