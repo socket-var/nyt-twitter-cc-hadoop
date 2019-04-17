@@ -1,6 +1,0 @@
-/home/cse587/hadoop-3.1.2
-sbin/start-all.sh
-hadoop fs -rm -r /user/saketh/mr/output
-hadoop jar /home/cse587/hadoop-3.1.2/share/hadoop/tools/lib/hadoop-streaming-3.1.2.jar -file wc_mapper.py -mapper wc_mapper.py -file wc_reducer.py -reducer wc_reducer.py -input /user/saketh/mr/input/* -output /user/saketh/mr/output_2
-import nltk
-nltk.download("wordnet")
