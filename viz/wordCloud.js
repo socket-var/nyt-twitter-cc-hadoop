@@ -63,10 +63,12 @@ const showWordCloud = async (source, filename, selector) => {
 
 const handleClick = async evt => {
   const wordClouds = document.querySelectorAll("div.word-cloud");
+  // check if came from "/"
 
-  wordClouds.forEach(cloud => {
-    cloud.innerHTML = "";
-  });
+  if (window.location.push)
+    wordClouds.forEach(cloud => {
+      cloud.innerHTML = "";
+    });
 
   filename = evt.target.dataset.href;
   history.pushState((data = {}), (title = filename), (url = `/${filename}`));
@@ -79,6 +81,25 @@ const handleClick = async evt => {
 };
 
 const onLoad = event => {
+  if (window.location.pathname == "/") {
+    const cloudContainer = document.querySelector("div.word-cloud-container");
+    cloudContainer.style.display = "none";
+  }
+
+  const listener = () => {
+    const jumbotron = document.querySelector(".jumbotron");
+    const cloudContainer = document.querySelector("div.word-cloud-container");
+    if (window.location.pathname == "/") {
+      jumbotron.style.display = "block";
+      cloudContainer.style.display = "none";
+    } else {
+      jumbotron.style.display = "none";
+      cloudContainer.style.display = "block";
+    }
+  };
+
+  window.addEventListener("popstate", listener);
+
   const navItems = document.querySelectorAll(".nav-item");
   navItems.forEach(node => {
     node.addEventListener("click", handleClick);

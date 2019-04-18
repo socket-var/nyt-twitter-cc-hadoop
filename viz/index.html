@@ -11,10 +11,15 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <style>
+      .word-cloud-container {
+        display: "none";
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="/">Big data analysis</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -29,7 +34,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" data-href="soccer" href="#">Soccer</a>
           </li>
           <li class="nav-item">
@@ -42,6 +47,10 @@
       </div>
     </nav>
     <div class="container">
+      <div class="jumbotron">
+        This demo shows what's trending in sports like soccer, basketball and
+        baseball. The data is extracted from nyt, common crawl and twitter.
+      </div>
       <div class="word-cloud-container">
         <h1>Word count:</h1>
         <div class="word-count-container">
