@@ -30,19 +30,38 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" data-href="climate-change" href="#"
-              >Climate Change</a
-            >
+            <a class="nav-link" data-href="soccer" href="#">Soccer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-href="gun-control" href="#">Gun Control</a>
+            <a class="nav-link" data-href="basketball" href="#">Basketball</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-href="baseball" href="#">Baseball</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="container">
-      <h3>Word Cloud</h3>
-      <div class="word-cloud"></div>
+      <div class="word-cloud-container">
+        <h1>Word count:</h1>
+        <div class="word-count-container">
+          <h2>New York Times</h2>
+          <div class="wc-nyt word-cloud"></div>
+          <h2>Twitter</h2>
+          <div class="wc-twitter word-cloud"></div>
+          <h2>Common Crawl</h2>
+          <div class="wc-cc word-cloud"></div>
+        </div>
+        <h1>Word Co-occurence:</h1>
+        <div class="word-cooc-container">
+          <h2>New York Times</h2>
+          <div class="wcooc-nyt word-cloud"></div>
+          <h2>Twitter</h2>
+          <div class="wcooc-twitter word-cloud"></div>
+          <h2>Common Crawl</h2>
+          <div class="wcooc-cc word-cloud"></div>
+        </div>
+      </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
