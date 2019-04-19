@@ -64,11 +64,10 @@ const showWordCloud = async (source, filename, selector) => {
 const handleClick = async evt => {
   const wordClouds = document.querySelectorAll("div.word-cloud");
   // check if came from "/"
-
-  if (window.location.push)
-    wordClouds.forEach(cloud => {
-      cloud.innerHTML = "";
-    });
+  wordClouds.forEach(cloud => {
+    console.log("here");
+    cloud.innerHTML = "";
+  });
 
   filename = evt.target.dataset.href;
   history.pushState((data = {}), (title = filename), (url = `/${filename}`));
@@ -77,7 +76,8 @@ const handleClick = async evt => {
   showWordCloud("nyt", `${filename}_cooc`, "div.wcooc-nyt");
   showWordCloud("common_crawl", filename, "div.wc-cc");
   showWordCloud("common_crawl", `${filename}_cooc`, "div.wcooc-cc");
-  // showWordCloud("twitter", filename);
+  showWordCloud("twitter", filename, "div.wc-twitter");
+  // showWordCloud("twitter", `${filename}_cooc`, "div.wcooc-twitter");
 };
 
 const onLoad = event => {
