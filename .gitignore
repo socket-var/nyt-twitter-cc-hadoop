@@ -2,6 +2,7 @@
 input
 src
 output
+top_cooc
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
