@@ -26,29 +26,25 @@ function draw(layout, selector, words) {
     });
 }
 
-const showWordCloud = async (source, filename, selector) => {
-  console.log(`./src/${source}/${source}_${filename}.txt`);
-  const result = await d3.text(`./src/${source}/${source}_${filename}.txt`);
+const showWordCloud = async (type, source, filename, selector) => {
+  console.log(`./src/${type}/${source}/${source}_${filename}.txt`);
+  const result = await d3.text(
+    `./src/${type}/${source}/${source}_${filename}.txt`
+  );
   words = result.split("\n");
-  rows = words.map(word => {
+  results = words.map(word => {
     [w, count] = word.split("\t");
-    count = parseInt(count);
-    return { word: w, count };
+    return w;
   });
-
-  sorted_words = rows.sort((a, b) => {
-    return a.count < b.count;
-  });
-
-  results = sorted_words.map(item => item.word);
 
   const layout = d3.layout
     .cloud()
     .size([cloudContainer.clientWidth, window.innerHeight]);
   layout
     .words(
-      results.slice(1, 100).map(function(d) {
+      results.map(function(d) {
         return { text: d, size: 10 + Math.random() * 90 };
+        // return { text: d, size: 30 };
       })
     )
     .rotate(function() {
@@ -65,19 +61,18 @@ const handleClick = async evt => {
   const wordClouds = document.querySelectorAll("div.word-cloud");
   // check if came from "/"
   wordClouds.forEach(cloud => {
-    console.log("here");
     cloud.innerHTML = "";
   });
 
   filename = evt.target.dataset.href;
   history.pushState((data = {}), (title = filename), (url = `/${filename}`));
 
-  showWordCloud("nyt", filename, "div.wc-nyt");
-  showWordCloud("nyt", `${filename}_cooc`, "div.wcooc-nyt");
-  showWordCloud("common_crawl", filename, "div.wc-cc");
-  showWordCloud("common_crawl", `${filename}_cooc`, "div.wcooc-cc");
-  showWordCloud("twitter", filename, "div.wc-twitter");
-  // showWordCloud("twitter", `${filename}_cooc`, "div.wcooc-twitter");
+  showWordCloud("word_count", "nyt", filename, "div.wc-nyt");
+  showWordCloud("cooccurence", "nyt", filename, "div.wcooc-nyt");
+  showWordCloud("word_count", "common_crawl", filename, "div.wc-cc");
+  showWordCloud("cooccurence", "common_crawl", filename, "div.wcooc-cc");
+  showWordCloud("word_count", "twitter", filename, "div.wc-twitter");
+  showWordCloud("cooccurence", "twitter", filename, "div.wcooc-twitter");
 };
 
 const onLoad = event => {
