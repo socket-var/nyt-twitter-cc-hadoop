@@ -1,6 +1,7 @@
 const cloudContainer = document.querySelector(".word-cloud-container");
 
 function draw(layout, selector, words) {
+  var fill = d3.scaleOrdinal(d3.schemeCategory10);
   d3.select(selector)
     .append("svg")
     .attr("width", layout.size()[0])
@@ -16,6 +17,9 @@ function draw(layout, selector, words) {
     .append("text")
     .style("font-size", function(d) {
       return d.size + "px";
+    })
+    .style("fill", function(d) {
+      return fill(d.text.toLowerCase());
     })
     .attr("text-anchor", "middle")
     .attr("transform", function(d) {
