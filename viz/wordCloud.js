@@ -47,8 +47,8 @@ const showWordCloud = async (type, source, filename, selector) => {
   layout
     .words(
       results.map(function(d) {
-        return { text: d, size: 10 + Math.random() * 90 };
-        // return { text: d, size: 30 };
+        // return { text: d, size: 10 + Math.random() * 90 };
+        return { text: d, size: 40 };
       })
     )
     .rotate(function() {

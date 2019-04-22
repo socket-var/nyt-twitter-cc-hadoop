@@ -15,6 +15,10 @@
       .word-cloud-container {
         display: "none";
       }
+
+      h1{
+        text-align:center;
+      }
     </style>
   </head>
   <body>
@@ -54,26 +58,25 @@
     </nav>
     <div class="container">
       <div class="jumbotron">
-        This demo shows what's trending in sports like soccer, basketball and
-        baseball. The data is extracted from nyt, common crawl and twitter.
+        This website contains word clouds that visualize data obtained from big data analysis performed on various sports topics like baseball, basketball, soccer, american football and golf. The data is extracted from nyt, common crawl and twitter.
       </div>
       <div class="word-cloud-container">
-        <h1 style="text-align:center">Word count:</h1>
+        <h1>Word count:</h1>
         <div class="word-count-container">
-          <h2>New York Times</h2>
+          <h2>New York Times:</h2>
           <div class="wc-nyt word-cloud"></div>
-          <h2>Twitter</h2>
+          <h2>Twitter:</h2>
           <div class="wc-twitter word-cloud"></div>
-          <h2>Common Crawl</h2>
+          <h2>Common Crawl:</h2>
           <div class="wc-cc word-cloud"></div>
         </div>
         <h1>Word Co-occurence:</h1>
         <div class="word-cooc-container">
-          <h2>New York Times</h2>
+          <h2>New York Times:</h2>
           <div class="wcooc-nyt word-cloud"></div>
-          <h2>Twitter</h2>
+          <h2>Twitter:</h2>
           <div class="wcooc-twitter word-cloud"></div>
-          <h2>Common Crawl</h2>
+          <h2>Common Crawl:</h2>
           <div class="wcooc-cc word-cloud"></div>
         </div>
       </div>

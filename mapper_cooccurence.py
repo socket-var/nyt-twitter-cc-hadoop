@@ -12,7 +12,7 @@ from io import open
 keywords = []
 
 # top words file name - edit here
-with open("./output/top_words/nyt/nyt_golf.txt", "r", encoding="utf-8") as f:
+with open("./output/top_words/word_count/nyt/nyt_nfl.txt", "r", encoding="utf-8") as f:
     for line in f:
         line = line.strip().split("\t")[0]
         keywords.append(line)
