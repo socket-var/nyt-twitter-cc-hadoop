@@ -1,15 +1,8 @@
-<h1 style="text-align: center">CSE 587 - Lab 2 report</h1>
 <h2 style="text-align: center">Data Aggregation, Big data analysis and Visualization</h2>
-
-## Submitted by:
-
-#### Saketh Varma, Pericherla - sakethva - 50288206
-
-#### Aditya Vikram, Parakala - aparakal - 50289171
 
 ## Topic: Sports
 
-The topic that we chose for this lab is Sports and our sub-topics are:
+The topic is Sports and our sub-topics are:
 
 - Baseball
 - Basketball
